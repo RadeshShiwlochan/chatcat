@@ -1,0 +1,1 @@
+This app is a messaging app built using Node.js, Express and MongoDB.
