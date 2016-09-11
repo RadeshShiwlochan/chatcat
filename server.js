@@ -3,17 +3,14 @@
 const express = require('express');
 const app     = express();
 
-let helloMiddleware = (req, res, next) => {
-	req.hello = "Hello!, this is the helloMiddleware! ";
-	next();
-}
-
-app.use(helloMiddleware);
-
 app.set('port', process.env.PORT || 3000);
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res, next) => {
-	res.send('<h1>Hello Express!</h1>' + req.hello);
+	//res.send('<h1>Hello Express!</h1>' + req.hello);
+	res.render('login', {
+		pageTitle: 'My Login Page'
+	});
 });
 
 app.get('/dashboard', (req, res, next) => {
