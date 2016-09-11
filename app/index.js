@@ -7,6 +7,10 @@ router.get('/', (req, res, next) => {
 	});
 });
 
+router.get('/info', (req,res,next)=> {
+	res.send('Test Page');
+});
+
 module.exports = {
 	router: router
 }
