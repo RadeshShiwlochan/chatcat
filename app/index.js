@@ -7,9 +7,13 @@ router.get('/', (req, res, next) => {
 	});
 });
 
-router.get('/info', (req,res,next)=> {
-	res.send('Test Page');
+router.get('/chatroom', (req,res,next)=> {
+	res.render('chatroom');
 });
+
+router.get('/rooms', (req,res, next)=> {
+	res.render('rooms');
+})
 
 module.exports = {
 	router: router
