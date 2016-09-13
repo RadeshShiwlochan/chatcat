@@ -13,7 +13,11 @@ router.get('/chatroom', (req,res,next)=> {
 
 router.get('/rooms', (req,res, next)=> {
 	res.render('rooms');
-})
+});
+
+router.use('/NA', (req,res,next) => {
+	res.status(404).sendFile(process.cwd() + '/views/404.htm');
+});
 
 module.exports = {
 	router: router
