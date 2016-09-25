@@ -15,14 +15,14 @@ router.get('/rooms', (req,res, next) =>{
 	res.render('rooms');
 });
 
-router.get('/getsession', (req, res, next) =>{
-	res.send("My Favorite Color " + req.session.favColor);
-});
+// router.get('/getsession', (req, res, next) =>{
+// 	res.send("My Favorite Color " + req.session.favColor);
+// });
 
-router.get('/setsession', (req,res,next) =>{
-	req.session.favColor = "Red";
-	res.send("Session Set");
-});
+// router.get('/setsession', (req,res,next) =>{
+// 	req.session.favColor = "Red";
+// 	res.send("Session Set");
+// });
 
 router.use((req,res,next) => {
 	res.status(404).sendFile(process.cwd() + '/views/404.htm');
