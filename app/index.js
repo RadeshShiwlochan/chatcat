@@ -8,10 +8,12 @@ router.get('/', (req, res, next) =>{
 });
 
 router.get('/chatroom', (req,res,next) =>{
+	console.log("in chatroom");
 	res.render('chatroom');
 });
 
 router.get('/rooms', (req,res, next) =>{
+	console.log("in rooms");
 	res.render('rooms');
 });
 
