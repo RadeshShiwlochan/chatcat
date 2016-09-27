@@ -6,6 +6,13 @@ Mongoose.connection.on('error', error => {
 	console.log("MongoDB Error: ", error);
 });
 
+const chatUser = new Mongoose.Schema({
+	profileId: String,
+	fullName: String,
+	profilePic:String
+});
+
 module.exports = {
-	Mongoose
+	Mongoose,
+	userModel
 }
