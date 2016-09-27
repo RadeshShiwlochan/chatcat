@@ -26,6 +26,10 @@ router.get('/rooms', (req,res, next) =>{
 // 	res.send("Session Set");
 // });
 
+router.get('/about', (req, res, next) => {
+	res.render('about');
+});
+
 router.use((req,res,next) => {
 	res.status(404).sendFile(process.cwd() + '/views/404.htm');
 });

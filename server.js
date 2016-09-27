@@ -12,9 +12,12 @@ app.set('view engine', 'ejs');
 
 app.use('/', chatCat.router);
 
-
 app.get('/dashboard', (req, res, next) => {
 	res.send('<h1>This is the DashBoard!!');
+});
+
+app.get('/about', (req, res, next) => {
+	res.send('<h1>about.ejs</h1>');
 });
 
 app.listen(app.get('port'), () => {
