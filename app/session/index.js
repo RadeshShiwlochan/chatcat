@@ -10,10 +10,11 @@ if(process.env.NODE_ENV === 'production') {
 		secret: config.sessionSecret,
 		resave: false,
 		saveUninitialized: false,
+		
 		store: new MongoStore({
 			mongooseConnection: db.Mongoose.connection
-		});
-	});
+		})
+	})
 } else {
 	module.exports = session({
 		secret: config.sessionSecret,
