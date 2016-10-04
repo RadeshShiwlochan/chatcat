@@ -1,6 +1,6 @@
 'use strict';
 const router = require('express').Router();
-const db = require('../db')
+const db = require('../app/db')
 
 router.get('/', (req, res, next) =>{
 	res.render('login', {
@@ -61,7 +61,7 @@ let createNewUser = profile => {
 
 //took out router: router here in module exports
 module.exports = {
-	route,
+	router: router,
 	findOne,
 	createNewUser
 }
