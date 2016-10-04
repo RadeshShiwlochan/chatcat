@@ -1,5 +1,6 @@
 'use strict';
 const router = require('express').Router();
+const db = require('../db')
 
 router.get('/', (req, res, next) =>{
 	res.render('login', {
@@ -33,6 +34,13 @@ router.get('/about', (req, res, next) => {
 router.use((req,res,next) => {
 	res.status(404).sendFile(process.cwd() + '/views/404.htm');
 });
+
+//Find a single user base on a key
+let findOne = profileID => {
+	return db.userModel.findOne({
+		'profileId':profileID
+	})
+}
 
 module.exports = {
 	router: router

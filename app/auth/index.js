@@ -1,6 +1,7 @@
 'use strict';
 const passport = require('passort');
 const config = require('../config');
+const h = require('../app');
 const Facebook Strategy = require('passport-facebook').Strategy;
 
 let authProcessor = (accessToken, refreshToken, profile, done) => {
