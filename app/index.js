@@ -39,9 +39,29 @@ router.use((req,res,next) => {
 let findOne = profileID => {
 	return db.userModel.findOne({
 		'profileId':profileID
+	});
+}
+
+let createNewUser = profile => {
+	return new Promise((resolve, reject) => {
+		let newChatUser = new db.userModel({
+			profileId: profile.id,
+			fullName: profile.displayName,
+			profilePic: profile.photos[0].value || ''
+		});
+		newChatUser.save(error => {
+			if(error) {
+				reject(error);
+			}else {
+				resolve(newChatUser);
+			}
+		})
 	})
 }
 
+//took out router: router here in module exports
 module.exports = {
-	router: router
+	route,
+	findOne,
+	createNewUser
 }
