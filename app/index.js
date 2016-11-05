@@ -1,6 +1,7 @@
 'use strict';
 const router = require('express').Router();
 const db = require('../app/db')
+require('./auth')();
 
 router.get('/', (req, res, next) =>{
 	res.render('login', {
