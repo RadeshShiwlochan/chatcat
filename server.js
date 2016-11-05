@@ -15,12 +15,6 @@ app.use('/', chatCat.router);
 app.use(passport.initialize());
 app.use(passport.session());
 
-let helloMiddleware = (req,res, next) => {
-	req.hello = "hello from hello middle ware";
-	next();
-}
-
-app.use(helloMiddleware);
 
 app.get('/dashboard', (req, res, next) => {
 	res.send('<h1>This is the DashBoard!!</h1>');

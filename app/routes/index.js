@@ -2,6 +2,7 @@
 const router = require('express').Router();
 
 module.exports = () => {
+
 	let routes = {
 		'get': {
 			'/': (req, res, next) => {
@@ -17,7 +18,6 @@ module.exports = () => {
 		'post': {
 
 		}
-
 	}
 
 	let registerRoutes = (routes, method) => {
@@ -37,5 +37,5 @@ module.exports = () => {
 
 	registerRoutes(routes);
 	return router;
-	
+
 }
