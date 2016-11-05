@@ -19,4 +19,12 @@ module.exports = () => {
 		}
 
 	}
+
+	let registerRoutes = (routes, method) => {
+		for(let key in routes) {
+			if(typeof routes[key] === 'object' && routes[key] !== null && !(routes[key] instanceof Array)) {
+				registerRoutes(routes[key], key);
+			}
+		}
+	}
 }
