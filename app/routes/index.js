@@ -20,6 +20,13 @@ module.exports = () => {
 			'/login': (req, res, next) => {
 				res.render('login');
 			},
+			'/getsession': (req, res, next) => {
+				res.send("My Fav color : " + req.session.favColor);
+			},
+			'/setsession': (req, res, next) => {
+				req.session.favColor = "Red";
+				res.send("Session Set");
+			},
 		},
 		'post': {
 
