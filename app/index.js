@@ -73,7 +73,8 @@
 
 //took out router: router here in module exports
 module.exports = {
-	router: require('./routes')()
+	router: require('./routes')(),
+	session: require('./session')
 	//router: router,
 	//findOne,
 	//createNewUser,

@@ -12,6 +12,7 @@ app.set('view engine', 'ejs');
 //app.use('/getsession', chatCat.session);
 
 app.use('/', chatCat.router);
+app.use(chatCat.session);
 //app.use(passport.initialize());
 //app.use(passport.session());
 
