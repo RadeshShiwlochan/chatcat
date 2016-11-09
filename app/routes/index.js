@@ -13,7 +13,13 @@ module.exports = () => {
 			},
 			'/chat': (req, res, next) => {
 				res.render('chatroom');
-			}
+			},
+			'/about': (req, res, next) => {
+				res.render('about');
+			},
+			'/login': (req, res, next) => {
+				res.render('login');
+			},
 		},
 		'post': {
 
