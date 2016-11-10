@@ -1,8 +1,8 @@
 'use strict';
-//const passport = require('passort');
-//const config = require('../config');
+const passport = require('passort');
+const config = require('../config');
 //const h = require('../app');
-//const Facebook Strategy = require('passport-facebook').Strategy;
+const Facebook Strategy = require('passport-facebook').Strategy;
 
 // module.exports = () => {
 // 	passport.serializeUser((user, done) => {
