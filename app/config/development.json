@@ -3,8 +3,8 @@
 	"dbURI": "mongodb://chatcatuser:mychatcat@ds149207.mlab.com:49207/radeshchatcatdb",
 	"sessionSecret": "catscanfly",
 	"fb": {
-		"clientID": "1623616424599703",
-		"clientSecret": "00aa722731ad4c41bb0b7e862421484a",
+		"clientID": "",
+		"clientSecret": "",
 		"callbackURL": "//localhost:3000/auth/facebook/callback",
 		"profileFields": ["id", "displayName", "photos"]
 	}
