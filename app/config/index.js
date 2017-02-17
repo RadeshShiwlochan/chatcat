@@ -19,3 +19,4 @@ if(process.env.NODE_ENV === 'production') {
 	module.exports = require('./development.json');
   }
 
+//didnt set the callback url on facebook , lectrure 49

@@ -1,6 +1,6 @@
 'use strict';
 //const db = require('../app/db')
-//require('./auth')();
+require('./auth')();
 
 // router.get('/', (req, res, next) =>{
 // 	res.render('login', {
