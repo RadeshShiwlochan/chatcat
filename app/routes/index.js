@@ -10,25 +10,18 @@ module.exports = () => {
 				res.render('login');
 			},
 			'/rooms': (req, res, next) => {
-				res.render('rooms');
+				res.render('rooms', {
+					user: req.user
+				});
 			},
 			'/chat': (req, res, next) => {
 				res.render('chatroom');
 			},
-			'/about': (req, res, next) => {
-				res.render('about');
-			},
-			'/login': (req, res, next) => {
-				res.render('login');
-			},
-			'/getsession': (req, res, next) => {
-				res.send("My Fav color : " + req.session.favColor);
-			},
-			'/setsession': (req, res, next) => {
-				req.session.favColor = "Red";
-				res.send("Session Set");
-			},
-			'/auth/facebook':passport.authenticate('facebook')
+			'/auth/facebook':passport.authenticate('facebook'),
+			'/auth/facebook/callback': passport.authenticate('facebook', {
+				successRedirect: '/rooms',
+				failureRedirect: '/'
+			})
 		},
 		'post': {
 
