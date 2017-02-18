@@ -85,6 +85,43 @@ let randomHex = () => {
 	return crypto.randomBytes(24).toString('hex');
 }
 
+let findRoomByID = (allrooms, roomID) => {
+	return allrooms.find((element, index, array) => {
+		if(element.roomID === roomID) {
+			return true;
+		} else {
+			return false;
+		}
+	})
+}
+
+let addUserToRoom = (allrooms, data, socket) => {
+	let getRoom = findRoomByID(allrooms, data.roomID);
+	if(getRoom !== undefined) {
+		let userID = socket.request.session.passport.user;
+		let checkUser = getRoom.users.findIndex((element, index, array) => {
+			if(element.userID === userID) {
+				return true;
+			} else {
+				return false;
+			}
+		});
+
+		if(checkUser > -1) {
+			getRoom.users.splice(checkUser, 1);
+		}
+		getRoom.users.push({
+			socketID: socket.id,
+			userID,
+			user: data.user,
+			userPic: data.userPic
+		});
+
+		socket.join(data.roomID);
+	    return getRoom;
+	}
+}
+
 module.exports = {
 	route,
 	findOne,
@@ -92,5 +129,7 @@ module.exports = {
 	findById,
 	isAuthenticated,
 	findRoomByName,
-	randomHex
+	randomHex,
+	findRoomByID,
+	addUserToRoom
 }

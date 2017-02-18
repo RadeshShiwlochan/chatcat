@@ -26,4 +26,11 @@ module.exports = (io,app) => {
 		})
 	});
 
+	io.of('/chatter').on('connection', socket => {
+		socket.on('join', data => {
+			let usersList = h.addUserToRoom(allrooms, data, socket);
+			console.log('usersList: ', usersList);
+		});
+	});
+
 }
