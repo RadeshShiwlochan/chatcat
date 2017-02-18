@@ -16,7 +16,8 @@ const chatUser = new Mongoose.Schema({
 });
 
 //turn the schema into a usable model
-let userModel = Mongoose.model('chatUser', chatUser);
+//changed here 'chatUser', chatUser 
+let userModel = Mongoose.model('chatuser', chatUser);
 
 module.exports = {
 	Mongoose,
